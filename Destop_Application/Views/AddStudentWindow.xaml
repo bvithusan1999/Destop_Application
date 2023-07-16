@@ -1,0 +1,148 @@
+﻿<Window x:Class="Destop_Application.Views.AddStudentWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:Icon="http://metro.mahapps.com/winfx/xaml/iconpacks"
+        xmlns:local="clr-namespace:Destop_Application.Views"
+        xmlns:local1="clr-namespace:Destop_Application.ViewModels"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen" WindowStyle="None"
+        AllowsTransparency="True"  Background ="Transparent"
+        Title="Add Student Window" Height="700" Width="350">
+    <Window.DataContext>
+        <local1:StaffWindowVM/>
+    </Window.DataContext>
+    
+    <Grid>
+        <Border BorderBrush="#FF4169E1" BorderThickness="5" Background="#ffffffff" CornerRadius="25" Margin="5" MouseDown="Border_MouseDown" >
+
+            <StackPanel Orientation="Vertical" Margin="0">
+                <StackPanel Orientation="Horizontal" Margin="10" HorizontalAlignment="Right">
+                    <Button Width="25" Height="25" Margin="5"  Background="Transparent"
+                            BorderBrush="#FF4169E1" Foreground="#FF4169E1"
+                            BorderThickness="2" Click="Button_Click_1">
+                        <Icon:PackIconMaterial  Kind="Close"  Margin="0"/>
+                    </Button>
+
+                </StackPanel>
+                <StackPanel Orientation="Vertical"  >
+                    <TextBlock Text="Add a student" Style="{StaticResource titleText}"/>
+
+
+                </StackPanel>
+                <StackPanel Orientation="Vertical" Margin="40 30 40 0">
+                    <TextBlock Text="First Name"  Margin="0 0 0 5" FontWeight="Bold"/>
+                    <Border BorderThickness="0 0 0 2" BorderBrush="#FF4169E1"  CornerRadius="0">
+                        <Grid Margin="5">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+
+                            <TextBlock x:Name="textFirstName"  MouseDown="textFirstName_MouseDown"   
+                                   Grid.Column="1" Text="First Name" VerticalAlignment="Center"
+                                    Style="{StaticResource textHint}"/>
+                            <TextBox x:Name="txtFirstName" Text="{Binding FirstName}"  LostFocus="txtFirstName_LostFocus"  Style="{StaticResource textBox}"/>
+                        </Grid>
+                    </Border>
+                </StackPanel>
+                <StackPanel Orientation="Vertical" Margin="40 10 40 0">
+                    <TextBlock Text="Last Name" FontWeight="Bold"  Margin="0 0 0 5"/>
+                    <Border BorderThickness="0 0 0 2" BorderBrush="#FF4169E1"  >
+                        <Grid Margin="5">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <TextBlock x:Name="textLastName"  MouseDown="textLastName_MouseDown"   
+                                   Grid.Column="1" Text="Last Name" VerticalAlignment="Center"
+                                    Style="{StaticResource textHint}"/>
+                            <TextBox x:Name="txtLastName" Text="{Binding LastName}"  LostFocus="txtLastName_LostFocus"  Style="{StaticResource textBox}"/>
+                        </Grid>
+                    </Border>
+                </StackPanel>
+
+                <StackPanel Orientation="Vertical" Margin="40 10 40 0">
+                    <TextBlock Text="NIC Number" FontWeight="Bold" Margin="0 0 0 5"/>
+                    <Border BorderThickness="0 0 0 2" BorderBrush="#FF4169E1"  >
+                        <Grid Margin="5">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <TextBlock x:Name="textNic"  MouseDown="textNic_MouseDown"   
+                                   Grid.Column="1" Text="NIC No" VerticalAlignment="Center"
+                                    Style="{StaticResource textHint}"/>
+                            <TextBox x:Name="txtNic" Text="{Binding NicNo}"  LostFocus="txtNic_LostFocus"  Style="{StaticResource textBox}"/>
+                        </Grid>
+                    </Border>
+                </StackPanel>
+
+                
+                <StackPanel Orientation="Vertical" Margin="40 10 40 0">
+                    <TextBlock Text="Maths" FontWeight="Bold"  Margin="0 0 0 5"/>
+                    <Border BorderThickness="0 0 0 2" BorderBrush="#FF4169E1"  >
+                        <Grid Margin="5">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <TextBlock x:Name="textMaths"  MouseDown="textMaths_MouseDown"   
+                                   Grid.Column="1" Text="Marks in Maths Subject" VerticalAlignment="Center"
+                                    Style="{StaticResource textHint}"/>
+                            <TextBox x:Name="txtMaths" Text="{Binding Maths}"  LostFocus="txtMaths_LostFocus"  Style="{StaticResource textBox}"/>
+                        </Grid>
+                    </Border>
+                </StackPanel>
+
+                <StackPanel Orientation="Vertical" Margin="40 10 40 0">
+                    <TextBlock Text="Physics" FontWeight="Bold" Margin="0 0 0 5"/>
+                    <Border BorderThickness="0 0 0 2" BorderBrush="#FF4169E1"  >
+                        <Grid Margin="5">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <TextBlock x:Name="textPhysics"  MouseDown="textPhysics_MouseDown"   
+                                   Grid.Column="1" Text="Marks in Physics Subject" VerticalAlignment="Center"
+                                    Style="{StaticResource textHint}"/>
+                            <TextBox x:Name="txtPhysics" Text="{Binding Physics}"  LostFocus="txtPhysics_LostFocus"  Style="{StaticResource textBox}"/>
+                        </Grid>
+                    </Border>
+                </StackPanel>
+                
+
+                
+                <StackPanel Orientation="Vertical" Margin="40 10 40 0">
+                    <TextBlock Text="Chemistry" FontWeight="Bold" Margin="0 0 0 5"/>
+                    <Border BorderThickness="0 0 0 2" BorderBrush="#FF4169E1"  CornerRadius="0">
+                        <Grid Margin="5">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <TextBlock x:Name="textChemistry"  MouseDown="textChemistry_MouseDown"   
+                                   Grid.Column="1" Text="Marks in Chemistry Subject" VerticalAlignment="Center"
+                                    Style="{StaticResource textHint}"/>
+                            <TextBox x:Name="txtChemistry" Text="{Binding Chemistry}" LostFocus="txtChemistry_LostFocus"  Style="{StaticResource textBox}"/>
+                        </Grid>
+                    </Border>
+                </StackPanel>
+                
+ 
+                
+
+                <Button Margin="30" Content="Add Student" Click="Button_Click" 
+                            Style="{StaticResource mainButton}" Command="{Binding InsertStudentCommand}" />
+            </StackPanel>
+        </Border>
+
+    </Grid>
+</Window>
